@@ -1,0 +1,36 @@
+body {
+    background-image: url("/static/greetings/img/dingo.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+h1 {
+    margin-top: 50px;
+    text-align: center
+}
+
+.button:hover {
+    background-color: lightgoldenrodyellow;
+}
+
+a {
+    color: black;
+    text-transform: uppercase;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
