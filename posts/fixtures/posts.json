@@ -1,0 +1,68 @@
+[
+{
+    "model": "posts.post",
+    "pk": 1,
+    "fields": {
+        "title": "Testowy",
+        "content": "Post 1",
+        "created": "2021-05-23 17:50:18.500Z",
+        "modified": "2021-05-23 17:50:18.500Z",
+        "author_id": 1
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 2,
+    "fields": {
+        "title": "Post 2",
+        "content": "Post Tatiany",
+        "created": "2021-05-23 17:50:32.853Z",
+        "modified": "2021-05-23 17:50:32.853Z",
+        "author_id": 2
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 3,
+    "fields": {
+        "title": "Post dlaczego",
+        "content": "Dlaczego??",
+        "created": "2021-05-23 17:50:49.099Z",
+        "modified": "2021-05-23 17:50:49.099Z",
+        "author_id": 3
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 4,
+    "fields": {
+        "title": "Post 4",
+        "content": "oki",
+        "created": "2021-05-23 17:51:22.963Z",
+        "modified": "2021-05-23 17:51:22.963Z",
+        "author_id": 4
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 5,
+    "fields": {
+        "title": "Działaja posty",
+        "content": "posty sa ok",
+        "created": "2021-05-23 17:51:38.708Z",
+        "modified": "2021-05-23 17:51:38.708Z",
+        "author_id": 5
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 6,
+    "fields": {
+        "title": "Post Bartek 2",
+        "content": "Post 2 Bartka",
+        "created": "2021-05-23 17:51:59.875Z",
+        "modified": "2021-05-23 17:51:59.875Z",
+        "author_id": 1
+    }
+}
+]

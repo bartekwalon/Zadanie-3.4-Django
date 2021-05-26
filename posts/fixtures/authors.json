@@ -1,0 +1,47 @@
+[
+{
+    "model": "posts.author",
+    "pk": 1,
+    "fields": {
+        "nick": "Bartek",
+        "email": "Bartekwalon@gmail.com",
+        "bio": "Tu nic nie ma"
+    }
+},
+{
+    "model": "posts.author",
+    "pk": 2,
+    "fields": {
+        "nick": "Tatiana",
+        "email": "Hello@wppp.pl",
+        "bio": "Testowy"
+    }
+},
+{
+    "model": "posts.author",
+    "pk": 3,
+    "fields": {
+        "nick": "Testowy",
+        "email": "test232@o2.pl",
+        "bio": "Jest dobrze"
+    }
+},
+{
+    "model": "posts.author",
+    "pk": 4,
+    "fields": {
+        "nick": "Dlaczego",
+        "email": "dlaczego@o2.pl",
+        "bio": "Dlaczego?"
+    }
+},
+{
+    "model": "posts.author",
+    "pk": 5,
+    "fields": {
+        "nick": "Jest ok",
+        "email": "jestok@wp.pl",
+        "bio": "Wszystko dziala"
+    }
+}
+]

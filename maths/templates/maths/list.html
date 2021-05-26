@@ -1,0 +1,102 @@
+{% extends "main.html" %}
+
+{% block title %}Maths list{% endblock %}
+
+{% load django_bootstrap_breadcrumbs %}
+{% block breadcrumbs %}
+    {{ block.super }}
+    {% breadcrumb "maths" "maths.views.maths_list" %}
+{% endblock %}
+
+{% block content %}
+
+
+    {% render_breadcrumbs %}
+
+    <div class="search">
+        <form>
+            <label for="operation">Operacja</label>
+            <input type="text" id="operation" name="operation">
+            <input type="submit" value="szukaj">
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <table class="table table-stripped">
+
+                <tr>
+                    <th>id</th>
+                    <th>a</th>
+                    <th>b</th>
+                    <th>op</th>
+                    <th>result</th>
+                </tr>
+                {% for m in maths %}
+                    <tr>
+                        <td><a href="{% url 'maths:details' id=m.id %}">{{ m.id }}</a></td>
+                        <td>{{ m.a }}</td>
+                        <td>{{ m.b }}</td>
+                        <td>{{ m.operation }}</td>
+                        <td>{% if m.result.value %}{{ m.result.value }}{% else %}{{ m.result.error }}{% endif %}</td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center pagination-sm">
+                    {% if maths.has_previous %}
+                        <!-- If it ain't a search result display, don't append the search query
+                             to the URL. -->
+                        {% if not search %}
+                            <li class="page-item">
+                                <a class="page-link" href="{% url 'maths:list' %}?page={{ maths.previous_page_number }}"
+                                   tabindex="-1">Previous</a>
+                            </li>
+                        {% else %}
+                            <!-- Append the searched query to the URL, so that on a search results page,
+                                 the pagination don't revert to listing all the listview items. -->
+                            <li class="page-item">
+                                <a class="page-link"
+                                   href="{% url 'maths:list' %}?{{ search }}&page={{ maths.previous_page_number }}"
+                                   tabindex="-1">Previous</a>
+                            </li>
+                        {% endif %}
+                    {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                    {% endif %}
+                    {% for object in maths.paginator.page_range %}
+                        <li class="page-item"><a class="page-link"
+                                                 href="{% url 'maths:list' %}?page={{ forloop.counter }}">{{ forloop.counter }}</a>
+                        </li>
+                    {% endfor %}
+                    {% if maths.has_next %}
+                        {% if not search %}
+                            <li class="page-item">
+                                <a class="page-link" href="{% url 'maths:list' %}?page={{ maths.next_page_number }}">Next</a>
+                            </li>
+                        {% else %}
+                            <li class="page-item">
+                                <a class="page-link"
+                                   href="{% url 'maths:list' %}?{{ search }}&page={{ maths.next_page_number }}">Next</a>
+                            </li>
+                        {% endif %}
+                    {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+
+        </div>
+        <div class="col-6">
+            <h1>Statistics</h1>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

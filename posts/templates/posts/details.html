@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+
+{% block title %}Post{% endblock %}
+
+{% load django_bootstrap_breadcrumbs %}
+{% block breadcrumbs %}
+    {{ block.super }}
+    {% breadcrumb "posts" "posts:list" %}
+{% endblock %}
+
+{% block content %}
+    {%  render_breadcrumbs %}
+    <h1>{{ post.title }}</h1>
+    <h2>{{ post.author.nick }} | {{ post.created }}</h2>
+    <p>
+        {{ post.content }}
+    </p>
+    <div><img src="{{ post.image.url }}"></div>
+    <a href="{% url "posts:list" %}">back</a>
+{% endblock %}
